@@ -15,7 +15,7 @@ This ledger distinguishes implementation evidence from model/product evidence. `
 | Disposal quiesces active child and removes workspace | PASS | Hanging-process lifecycle test |
 | Windows normal-exit detached descendant containment | NOT IMPLEMENTED | Node `spawn` cannot provide kill-on-close Job ownership; local reports record this promotion blocker |
 | Deterministic keyless calibration | PASS | `evals/reports/keyless-latest.json` after execution |
-| Clean tarball install/public import/CLI/audit | NOT RUN | `pnpm run eval:pack` |
+| Clean tarball install/public import/bin/patch/example/audit | PASS | `pack-smoke-latest.json`: tarball SHA-256 `46d22fe6...e13a`, source `31f65a4`, `sourceDirty=false` |
 | Built DSH SDK real-process composition | BLOCKED UPSTREAM | Adjacent DSH commit's built SDK snapshot currently fails `cannot create effect on inactive context`; a source-only compatibility workaround is not accepted |
 | Real-model paired suite | NOT RUN | No credentials/models invoked in this implementation pass |
 | Provider billing reconciliation | NOT RUN | Probe usage alone is insufficient for production cost claims |

@@ -1,0 +1,26 @@
+{
+  "schema": "dsh-eval-pack-smoke",
+  "schemaVersion": 1,
+  "status": "PASS",
+  "pass": true,
+  "releaseEligible": true,
+  "finishedAt": "2026-08-30T08:06:15.379Z",
+  "platform": "win32",
+  "arch": "x64",
+  "node": "v26.8.1",
+  "package": "dsh-eval-0.1.0",
+  "tarballSha256": "46d22fe661d56d139f2fa5776b50cb68cca200fe044fdbc63f5fd8081dfae13a",
+  "tarballBytes": 43545,
+  "sourceRevision": "31f65a415ba6c2379bdc8fe39b63b1effc919c2e",
+  "sourceDirty": false,
+  "checks": {
+    "packProduced": true,
+    "cleanInstallFromTarball": true,
+    "publicImport": true,
+    "cliHelp": true,
+    "packagedExample": true,
+    "bundlePatch": true,
+    "packagedExampleExecution": true,
+    "productionAudit": true
+  }
+}
