@@ -1,0 +1,79 @@
+{
+  "schema": "dsh-eval-manifest",
+  "schemaVersion": 1,
+  "id": "keyless-smoke",
+  "description": "Deterministic paired smoke test proving external-world scoring and release gates.",
+  "dataset": {
+    "id": "keyless-write-answer",
+    "version": "1.0.0",
+    "caseFiles": [
+      "cases/write-answer.json"
+    ]
+  },
+  "variants": {
+    "baseline": {
+      "id": "known-bad",
+      "revision": "example-baseline-v1",
+      "executable": "node",
+      "args": [
+        "{manifestDir}/runners/write-answer.mjs"
+      ],
+      "taskInput": "argument",
+      "artifacts": [
+        "runners/write-answer.mjs"
+      ],
+      "entryArtifact": "runners/write-answer.mjs",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "env": {
+        "ANSWER": "41"
+      }
+    },
+    "candidate": {
+      "id": "known-good",
+      "revision": "example-candidate-v1",
+      "executable": "node",
+      "args": [
+        "{manifestDir}/runners/write-answer.mjs"
+      ],
+      "taskInput": "argument",
+      "artifacts": [
+        "runners/write-answer.mjs"
+      ],
+      "entryArtifact": "runners/write-answer.mjs",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "env": {
+        "ANSWER": "42"
+      }
+    }
+  },
+  "execution": {
+    "splits": [
+      "test"
+    ],
+    "repetitions": 5,
+    "seed": 42,
+    "timeoutMs": 5000,
+    "scorerTimeoutMs": 5000,
+    "maxOutputBytes": 65536,
+    "maxConcurrency": 1,
+    "keepWorkspaces": "never"
+  },
+  "thresholds": {
+    "minimumCandidateSuccessRate": 1,
+    "minimumSuccessRateDelta": 1,
+    "minimumMeanScoreDelta": 0.5,
+    "maximumPairRegressionCount": 0,
+    "maximumTaskRegressionCount": 0,
+    "maximumMeanDurationRegressionRatio": 100,
+    "maximumP95DurationRegressionRatio": 100,
+    "requireNoSafetyRegression": true,
+    "requireNoPrivacyRegression": true,
+    "requireNoStabilityRegression": true
+  }
+}

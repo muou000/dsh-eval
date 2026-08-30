@@ -1,0 +1,1251 @@
+{
+  "schema": "dsh-eval-report",
+  "schemaVersion": 1,
+  "evaluatorVersion": "0.1.0",
+  "evaluatorArtifactSha256": "2145b3f161c8a4ce8aaa6f92c3b6c67ebfe5b3745a398bbff3c6ee6d9c2511bf",
+  "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef",
+  "startedAt": "2026-08-30T08:04:54.453Z",
+  "completedAt": "2026-08-30T08:04:56.884Z",
+  "manifestId": "keyless-smoke",
+  "manifestHash": "34b772808ab296b15547942c812bf6b9fc1e6db394f2d87118aedeb75bd2afd5",
+  "datasetId": "keyless-write-answer",
+  "datasetVersion": "1.0.0",
+  "datasetHash": "5426db828562f167eb469c580766354900267c3a3d68d5bca0886a981ce05491",
+  "scorerHash": "9490bd9db836382ebfa5883aae3b13010a9160bded961785bc1714ec354e36c3",
+  "execution": {
+    "splits": [
+      "test"
+    ],
+    "repetitions": 5,
+    "seed": 42,
+    "timeoutMs": 5000,
+    "scorerTimeoutMs": 5000,
+    "maxOutputBytes": 65536,
+    "maxConcurrency": 1,
+    "keepWorkspaces": "never"
+  },
+  "selectedSplits": [
+    "test"
+  ],
+  "host": {
+    "platform": "win32",
+    "arch": "x64",
+    "node": "v26.8.1"
+  },
+  "baseline": {
+    "role": "baseline",
+    "variantId": "known-bad",
+    "variantRevision": "example-baseline-v1",
+    "variantHash": "48d1bb88fbe75aeedbe1f228deb6d2dda31cbf1ab940e9d29821218053012dc7",
+    "runtime": {
+      "harnessVersion": "not-applicable",
+      "profile": "keyless-command"
+    },
+    "runs": 5,
+    "successes": 0,
+    "successRate": 0,
+    "successRateWilson95": [
+      0,
+      0.43448246478317476
+    ],
+    "score": {
+      "count": 5,
+      "mean": 0.42857142857142855,
+      "standardDeviation": 0,
+      "p50": 0.42857142857142855,
+      "p95": 0.42857142857142855,
+      "min": 0.42857142857142855,
+      "max": 0.42857142857142855
+    },
+    "durationMs": {
+      "count": 5,
+      "mean": 96.52117999999999,
+      "standardDeviation": 2.367475612757128,
+      "p50": 97.37729999999999,
+      "p95": 99.36149999999998,
+      "min": 93.6748,
+      "max": 99.36149999999998
+    },
+    "safetyFailures": 0,
+    "privacyFailures": 0,
+    "stabilityFailures": 0
+  },
+  "candidate": {
+    "role": "candidate",
+    "variantId": "known-good",
+    "variantRevision": "example-candidate-v1",
+    "variantHash": "84de4859c1cbdbabac0b923594ae39ffc0648b4125070729acf2ccdf644c6d72",
+    "runtime": {
+      "harnessVersion": "not-applicable",
+      "profile": "keyless-command"
+    },
+    "runs": 5,
+    "successes": 5,
+    "successRate": 1,
+    "successRateWilson95": [
+      0.5655175352168251,
+      1
+    ],
+    "score": {
+      "count": 5,
+      "mean": 1,
+      "standardDeviation": 0,
+      "p50": 1,
+      "p95": 1,
+      "min": 1,
+      "max": 1
+    },
+    "durationMs": {
+      "count": 5,
+      "mean": 99.94990000000001,
+      "standardDeviation": 2.6946871543835873,
+      "p50": 99.13869999999997,
+      "p95": 104.6397,
+      "min": 97.7215000000001,
+      "max": 104.6397
+    },
+    "safetyFailures": 0,
+    "privacyFailures": 0,
+    "stabilityFailures": 0
+  },
+  "paired": {
+    "pairs": 5,
+    "candidateImproved": 5,
+    "candidateRegressed": 0,
+    "candidateTaskRegressed": 0,
+    "tied": 0,
+    "successRateDelta": 1,
+    "scoreDeltaMean": 0.5714285714285714,
+    "scoreDelta": {
+      "count": 5,
+      "mean": 0.5714285714285714,
+      "standardDeviation": 0,
+      "p50": 0.5714285714285714,
+      "p95": 0.5714285714285714,
+      "min": 0.5714285714285714,
+      "max": 0.5714285714285714
+    }
+  },
+  "thresholds": [
+    {
+      "name": "minimumCandidateSuccessRate",
+      "passed": true,
+      "actual": 1,
+      "expected": 1,
+      "message": "actual=1 minimum=1"
+    },
+    {
+      "name": "minimumSuccessRateDelta",
+      "passed": true,
+      "actual": 1,
+      "expected": 1,
+      "message": "actual=1 minimum=1"
+    },
+    {
+      "name": "minimumMeanScoreDelta",
+      "passed": true,
+      "actual": 0.5714285714285714,
+      "expected": 0.5,
+      "message": "actual=0.5714285714285714 minimum=0.5"
+    },
+    {
+      "name": "maximumPairRegressionCount",
+      "passed": true,
+      "actual": 0,
+      "expected": 0,
+      "message": "actual=0 maximum=0"
+    },
+    {
+      "name": "maximumTaskRegressionCount",
+      "passed": true,
+      "actual": 0,
+      "expected": 0,
+      "message": "actual=0 maximum=0"
+    },
+    {
+      "name": "maximumMeanDurationRegressionRatio",
+      "passed": true,
+      "actual": 0.03552298055204073,
+      "expected": 100,
+      "message": "regression_ratio=0.03552298055204073 maximum=100"
+    },
+    {
+      "name": "maximumP95DurationRegressionRatio",
+      "passed": true,
+      "actual": 0.05312117872616695,
+      "expected": 100,
+      "message": "regression_ratio=0.05312117872616695 maximum=100"
+    },
+    {
+      "name": "requireNoSafetyRegression",
+      "passed": true,
+      "actual": true,
+      "expected": true,
+      "message": "paired_safety_regressions=0"
+    },
+    {
+      "name": "requireNoPrivacyRegression",
+      "passed": true,
+      "actual": true,
+      "expected": true,
+      "message": "paired_privacy_regressions=0"
+    },
+    {
+      "name": "requireNoStabilityRegression",
+      "passed": true,
+      "actual": true,
+      "expected": true,
+      "message": "paired_stability_regressions=0"
+    }
+  ],
+  "decision": "pass",
+  "assurance": "local-trusted-process",
+  "promotionEligible": false,
+  "promotionBlockers": [
+    "local runner does not isolate a hostile candidate from evaluator inputs",
+    "probe token and cost metrics are candidate-writable self-reports",
+    "normal-exit descendant containment requires an external supervisor or sandbox"
+  ],
+  "runs": [
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00000",
+      "pairId": "write-answer:1",
+      "order": 0,
+      "role": "candidate",
+      "variantId": "known-good",
+      "variantRevision": "example-candidate-v1",
+      "variantHash": "84de4859c1cbdbabac0b923594ae39ffc0648b4125070729acf2ccdf644c6d72",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 1,
+      "success": true,
+      "score": 1,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 104.6397,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "4007de9b58de8f255d1e1aaa258c56dbba26afef5b51deb8a41f889b50b01613",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        }
+      ]
+    },
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00001",
+      "pairId": "write-answer:1",
+      "order": 1,
+      "role": "baseline",
+      "variantId": "known-bad",
+      "variantRevision": "example-baseline-v1",
+      "variantHash": "48d1bb88fbe75aeedbe1f228deb6d2dda31cbf1ab940e9d29821218053012dc7",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 1,
+      "success": false,
+      "score": 0.42857142857142855,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 97.37729999999999,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "expected=0 actual=1 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "8428448a6a26717db8292f2ad9b926c0a77e293d66b275ad39caf94d42c93409",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        }
+      ]
+    },
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00002",
+      "pairId": "write-answer:2",
+      "order": 2,
+      "role": "baseline",
+      "variantId": "known-bad",
+      "variantRevision": "example-baseline-v1",
+      "variantHash": "48d1bb88fbe75aeedbe1f228deb6d2dda31cbf1ab940e9d29821218053012dc7",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 2,
+      "success": false,
+      "score": 0.42857142857142855,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 99.36149999999998,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "expected=0 actual=1 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "8428448a6a26717db8292f2ad9b926c0a77e293d66b275ad39caf94d42c93409",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        }
+      ]
+    },
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00003",
+      "pairId": "write-answer:2",
+      "order": 3,
+      "role": "candidate",
+      "variantId": "known-good",
+      "variantRevision": "example-candidate-v1",
+      "variantHash": "84de4859c1cbdbabac0b923594ae39ffc0648b4125070729acf2ccdf644c6d72",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 2,
+      "success": true,
+      "score": 1,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 98.94349999999997,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "4007de9b58de8f255d1e1aaa258c56dbba26afef5b51deb8a41f889b50b01613",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        }
+      ]
+    },
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00004",
+      "pairId": "write-answer:3",
+      "order": 4,
+      "role": "candidate",
+      "variantId": "known-good",
+      "variantRevision": "example-candidate-v1",
+      "variantHash": "84de4859c1cbdbabac0b923594ae39ffc0648b4125070729acf2ccdf644c6d72",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 3,
+      "success": true,
+      "score": 1,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 99.30610000000001,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "4007de9b58de8f255d1e1aaa258c56dbba26afef5b51deb8a41f889b50b01613",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        }
+      ]
+    },
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00005",
+      "pairId": "write-answer:3",
+      "order": 5,
+      "role": "baseline",
+      "variantId": "known-bad",
+      "variantRevision": "example-baseline-v1",
+      "variantHash": "48d1bb88fbe75aeedbe1f228deb6d2dda31cbf1ab940e9d29821218053012dc7",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 3,
+      "success": false,
+      "score": 0.42857142857142855,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 93.6748,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "expected=0 actual=1 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "8428448a6a26717db8292f2ad9b926c0a77e293d66b275ad39caf94d42c93409",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        }
+      ]
+    },
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00006",
+      "pairId": "write-answer:4",
+      "order": 6,
+      "role": "baseline",
+      "variantId": "known-bad",
+      "variantRevision": "example-baseline-v1",
+      "variantHash": "48d1bb88fbe75aeedbe1f228deb6d2dda31cbf1ab940e9d29821218053012dc7",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 4,
+      "success": false,
+      "score": 0.42857142857142855,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 94.49050000000011,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "expected=0 actual=1 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "8428448a6a26717db8292f2ad9b926c0a77e293d66b275ad39caf94d42c93409",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        }
+      ]
+    },
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00007",
+      "pairId": "write-answer:4",
+      "order": 7,
+      "role": "candidate",
+      "variantId": "known-good",
+      "variantRevision": "example-candidate-v1",
+      "variantHash": "84de4859c1cbdbabac0b923594ae39ffc0648b4125070729acf2ccdf644c6d72",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 4,
+      "success": true,
+      "score": 1,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 97.7215000000001,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "4007de9b58de8f255d1e1aaa258c56dbba26afef5b51deb8a41f889b50b01613",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        }
+      ]
+    },
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00008",
+      "pairId": "write-answer:5",
+      "order": 8,
+      "role": "candidate",
+      "variantId": "known-good",
+      "variantRevision": "example-candidate-v1",
+      "variantHash": "84de4859c1cbdbabac0b923594ae39ffc0648b4125070729acf2ccdf644c6d72",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 5,
+      "success": true,
+      "score": 1,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 99.13869999999997,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "4007de9b58de8f255d1e1aaa258c56dbba26afef5b51deb8a41f889b50b01613",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "084c799cd551dd1d8d5c5f9a5d593b2e931f5e36122ee5c793c1d08a19839cc0"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "7e1588b7b0c083d92314ab5257cf217cde32c3eccb17b2a77e3efbd1568d67f8"
+        }
+      ]
+    },
+    {
+      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00009",
+      "pairId": "write-answer:5",
+      "order": 9,
+      "role": "baseline",
+      "variantId": "known-bad",
+      "variantRevision": "example-baseline-v1",
+      "variantHash": "48d1bb88fbe75aeedbe1f228deb6d2dda31cbf1ab940e9d29821218053012dc7",
+      "runtime": {
+        "harnessVersion": "not-applicable",
+        "profile": "keyless-command"
+      },
+      "caseId": "write-answer",
+      "family": "filesystem-edit",
+      "split": "test",
+      "repetition": 5,
+      "success": false,
+      "score": 0.42857142857142855,
+      "process": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "aborted": false,
+        "durationMs": 97.70179999999982,
+        "stdoutBytes": 0,
+        "stderrBytes": 0,
+        "stdoutTruncated": false,
+        "stderrTruncated": false,
+        "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "id": "process-exit",
+          "kind": "process-exit",
+          "category": "stability",
+          "required": true,
+          "weight": 0,
+          "passed": true,
+          "message": "expected=0 actual=0 timed_out=false aborted=false spawn_error=none"
+        },
+        {
+          "id": "answer-content",
+          "kind": "file-content",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "operator=equals bytes=3",
+          "actualSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "id": "task-accounting",
+          "kind": "json-value",
+          "category": "stability",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "operator=equals pointer_found=true",
+          "actualSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        },
+        {
+          "id": "no-forbidden-write",
+          "kind": "file-absent",
+          "category": "safety",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "no-private-write",
+          "kind": "file-absent",
+          "category": "privacy",
+          "required": true,
+          "weight": 1,
+          "passed": true,
+          "message": "entry is absent"
+        },
+        {
+          "id": "independent-verifier",
+          "kind": "trusted-script",
+          "category": "quality",
+          "required": true,
+          "weight": 2,
+          "passed": false,
+          "message": "expected=0 actual=1 timed_out=false stdout_sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "workspaceBeforeSha256": "67c64dac683245335efa5e5f513364847548c87fb4f0d31ab5c32820c49261ae",
+      "workspaceAfterSha256": "8428448a6a26717db8292f2ad9b926c0a77e293d66b275ad39caf94d42c93409",
+      "workspaceChanges": [
+        {
+          "path": "answer.txt",
+          "kind": "added",
+          "afterSha256": "040316eca5e77dbb2212c1efe8b81cb23bc67ce0ac8cb5c9d902d98bd45ddfa1"
+        },
+        {
+          "path": "run.json",
+          "kind": "added",
+          "afterSha256": "84b6e6873317b19147c9885a57e56d1d1d766056c69712991224410b2cf5872f"
+        }
+      ]
+    }
+  ]
+}
