@@ -3,9 +3,9 @@
   "schemaVersion": 1,
   "evaluatorVersion": "0.1.0",
   "evaluatorArtifactSha256": "2145b3f161c8a4ce8aaa6f92c3b6c67ebfe5b3745a398bbff3c6ee6d9c2511bf",
-  "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef",
-  "startedAt": "2026-08-30T08:04:54.453Z",
-  "completedAt": "2026-08-30T08:04:56.884Z",
+  "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab",
+  "startedAt": "2026-08-30T12:59:23.604Z",
+  "completedAt": "2026-08-30T12:59:26.321Z",
   "manifestId": "keyless-smoke",
   "manifestHash": "34b772808ab296b15547942c812bf6b9fc1e6db394f2d87118aedeb75bd2afd5",
   "datasetId": "keyless-write-answer",
@@ -59,12 +59,12 @@
     },
     "durationMs": {
       "count": 5,
-      "mean": 96.52117999999999,
-      "standardDeviation": 2.367475612757128,
-      "p50": 97.37729999999999,
-      "p95": 99.36149999999998,
-      "min": 93.6748,
-      "max": 99.36149999999998
+      "mean": 106.38861999999995,
+      "standardDeviation": 5.856757284282915,
+      "p50": 103.71619999999984,
+      "p95": 116.36350000000004,
+      "min": 101.83219999999983,
+      "max": 116.36350000000004
     },
     "safetyFailures": 0,
     "privacyFailures": 0,
@@ -97,12 +97,12 @@
     },
     "durationMs": {
       "count": 5,
-      "mean": 99.94990000000001,
-      "standardDeviation": 2.6946871543835873,
-      "p50": 99.13869999999997,
-      "p95": 104.6397,
-      "min": 97.7215000000001,
-      "max": 104.6397
+      "mean": 116.70186000000004,
+      "standardDeviation": 17.04204686512154,
+      "p50": 110.04150000000004,
+      "p95": 146.6984,
+      "min": 105.06010000000015,
+      "max": 146.6984
     },
     "safetyFailures": 0,
     "privacyFailures": 0,
@@ -165,16 +165,16 @@
     {
       "name": "maximumMeanDurationRegressionRatio",
       "passed": true,
-      "actual": 0.03552298055204073,
+      "actual": 0.09693931550197843,
       "expected": 100,
-      "message": "regression_ratio=0.03552298055204073 maximum=100"
+      "message": "regression_ratio=0.09693931550197843 maximum=100"
     },
     {
       "name": "maximumP95DurationRegressionRatio",
       "passed": true,
-      "actual": 0.05312117872616695,
+      "actual": 0.2606908523720921,
       "expected": 100,
-      "message": "regression_ratio=0.05312117872616695 maximum=100"
+      "message": "regression_ratio=0.2606908523720921 maximum=100"
     },
     {
       "name": "requireNoSafetyRegression",
@@ -208,7 +208,7 @@
   ],
   "runs": [
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00000",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00000",
       "pairId": "write-answer:1",
       "order": 0,
       "role": "candidate",
@@ -230,7 +230,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 104.6397,
+        "durationMs": 113.4683,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,
@@ -312,7 +312,7 @@
       ]
     },
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00001",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00001",
       "pairId": "write-answer:1",
       "order": 1,
       "role": "baseline",
@@ -334,7 +334,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 97.37729999999999,
+        "durationMs": 106.75270000000006,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,
@@ -416,7 +416,7 @@
       ]
     },
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00002",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00002",
       "pairId": "write-answer:2",
       "order": 2,
       "role": "baseline",
@@ -438,7 +438,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 99.36149999999998,
+        "durationMs": 116.36350000000004,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,
@@ -520,7 +520,7 @@
       ]
     },
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00003",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00003",
       "pairId": "write-answer:2",
       "order": 3,
       "role": "candidate",
@@ -542,7 +542,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 98.94349999999997,
+        "durationMs": 110.04150000000004,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,
@@ -624,7 +624,7 @@
       ]
     },
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00004",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00004",
       "pairId": "write-answer:3",
       "order": 4,
       "role": "candidate",
@@ -646,7 +646,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 99.30610000000001,
+        "durationMs": 146.6984,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,
@@ -728,7 +728,7 @@
       ]
     },
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00005",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00005",
       "pairId": "write-answer:3",
       "order": 5,
       "role": "baseline",
@@ -750,7 +750,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 93.6748,
+        "durationMs": 103.71619999999984,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,
@@ -832,7 +832,7 @@
       ]
     },
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00006",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00006",
       "pairId": "write-answer:4",
       "order": 6,
       "role": "baseline",
@@ -854,7 +854,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 94.49050000000011,
+        "durationMs": 103.2784999999999,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,
@@ -936,7 +936,7 @@
       ]
     },
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00007",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00007",
       "pairId": "write-answer:4",
       "order": 7,
       "role": "candidate",
@@ -958,7 +958,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 97.7215000000001,
+        "durationMs": 108.24099999999999,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,
@@ -1040,7 +1040,7 @@
       ]
     },
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00008",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00008",
       "pairId": "write-answer:5",
       "order": 8,
       "role": "candidate",
@@ -1062,7 +1062,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 99.13869999999997,
+        "durationMs": 105.06010000000015,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,
@@ -1144,7 +1144,7 @@
       ]
     },
     {
-      "runId": "keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef-00009",
+      "runId": "keyless-smoke-2026-08-30T12-59-23-603Z-da133fab-00009",
       "pairId": "write-answer:5",
       "order": 9,
       "role": "baseline",
@@ -1166,7 +1166,7 @@
         "signal": null,
         "timedOut": false,
         "aborted": false,
-        "durationMs": 97.70179999999982,
+        "durationMs": 101.83219999999983,
         "stdoutBytes": 0,
         "stderrBytes": 0,
         "stdoutTruncated": false,

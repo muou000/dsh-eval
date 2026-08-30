@@ -1,0 +1,19 @@
+{
+  "format": "dsh-eval-current-dsh-smoke",
+  "version": 1,
+  "pluginRevision": "3e1820fda693fc36bb28152928cd55583a94d7e5",
+  "pluginDirty": false,
+  "dshRevision": "cd5ef8148158c3a752a658978873241fdf8e2bbc",
+  "dshDirty": false,
+  "dshSessionVersion": "0.1.2-alpha.1",
+  "node": "v26.8.1",
+  "assurance": "self-reported-probe-compatibility-only",
+  "checks": {
+    "serviceLoaded": true,
+    "currentSessionEventsObserved": true,
+    "usageObserved": true,
+    "probeContentFree": true,
+    "evaluatorDisposed": true
+  },
+  "pass": true
+}

@@ -10,3 +10,4 @@ evals/reports/*.md
 !evals/reports/keyless-latest.md
 !evals/reports/pack-smoke-latest.json
 !evals/reports/dsh-real-process-latest.json
+!evals/reports/current-dsh-smoke-latest.json

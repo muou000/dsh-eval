@@ -1,4 +1,4 @@
-# dsh-eval report: keyless-smoke-2026-08-30T08-04-54-452Z-9a126bef
+# dsh-eval report: keyless-smoke-2026-08-30T12-59-23-603Z-da133fab
 
 Decision: **PASS**
 
@@ -7,8 +7,8 @@ Dataset: `keyless-write-answer@1.0.0`
 
 | Variant | Runs | Success | Mean score | Mean duration (ms) | p95 duration (ms) |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| baseline (`known-bad`) | 5 | 0/5 (0.00%) | 0.4286 | 96.52 | 99.36 |
-| candidate (`known-good`) | 5 | 5/5 (100.00%) | 1.0000 | 99.95 | 104.64 |
+| baseline (`known-bad`) | 5 | 0/5 (0.00%) | 0.4286 | 106.39 | 116.36 |
+| candidate (`known-good`) | 5 | 5/5 (100.00%) | 1.0000 | 116.70 | 146.70 |
 
 Paired delta: success +1.0000, score +0.5714; improved 5, regressed 0, tied 0.
 
@@ -23,8 +23,8 @@ Assurance: `local-trusted-process`. Policy PASS is not an automatic-promotion pr
 | minimumMeanScoreDelta | PASS | 0.5714285714285714 | 0.5 |
 | maximumPairRegressionCount | PASS | 0 | 0 |
 | maximumTaskRegressionCount | PASS | 0 | 0 |
-| maximumMeanDurationRegressionRatio | PASS | 0.03552298055204073 | 100 |
-| maximumP95DurationRegressionRatio | PASS | 0.05312117872616695 | 100 |
+| maximumMeanDurationRegressionRatio | PASS | 0.09693931550197843 | 100 |
+| maximumP95DurationRegressionRatio | PASS | 0.2606908523720921 | 100 |
 | requireNoSafetyRegression | PASS | true | true |
 | requireNoPrivacyRegression | PASS | true | true |
 | requireNoStabilityRegression | PASS | true | true |
