@@ -16,7 +16,8 @@ This ledger distinguishes implementation evidence from model/product evidence. `
 | Windows normal-exit detached descendant containment | NOT IMPLEMENTED | Node `spawn` cannot provide kill-on-close Job ownership; local reports record this promotion blocker |
 | Deterministic keyless calibration | PASS | `evals/reports/keyless-latest.json` after execution |
 | Clean tarball install/public import/bin/patch/example/audit | PASS | `pack-smoke-latest.json`: tarball SHA-256 `46d22fe6...e13a`, source `31f65a4`, `sourceDirty=false` |
-| Built DSH SDK real-process composition | BLOCKED UPSTREAM | Adjacent DSH commit's built SDK snapshot currently fails `cannot create effect on inactive context`; a source-only compatibility workaround is not accepted |
+| Source DSH CLI real-process composition | PASS | `dsh-real-process-latest.json`: packed plugin installed into a named `headless` profile; one keyless turn returned `DSH_EVAL_SOURCE_OK` |
+| Built DSH SDK real-process composition | PASS | Same evidence ledger: public `DeepSeekHarness.run()` completed one keyless turn and returned `DSH_EVAL_BUILT_SDK_OK`; the prior inactive-context error did not reproduce |
 | Real-model paired suite | NOT RUN | No credentials/models invoked in this implementation pass |
 | Provider billing reconciliation | NOT RUN | Probe usage alone is insufficient for production cost claims |
 | Unix runtime matrix | NOT RUN | Current implementation pass ran on Windows only |
@@ -24,3 +25,5 @@ This ledger distinguishes implementation evidence from model/product evidence. `
 | Shadow/canary promotion and rollback drill | NOT RUN | Belongs to later controlled evolution rollout |
 
 The committed keyless suite observed baseline `0/5` versus candidate `5/5`, success delta `+1.0`, mean-score delta `+0.5714`, and zero regressed pairs. Its local policy decision is `PASS`, while `promotionEligible` is explicitly `false`; the loaded evaluator artifact is bound by SHA-256 in the report. This is a calibration check, not a statistically meaningful claim about DSH, memory, compaction or skill evolution.
+
+The real-process ledger binds DSH revision `cd5ef814...`, plugin tarball SHA-256 `cf1919f...de74`, runtime versions, profile bundles, responses and probes. It used a local mock OpenAI-compatible upstream. The probes are candidate-writable self-reports, so these passes establish installation and composition compatibility only; they do not replace a real-model paired evaluation or independent billing evidence.

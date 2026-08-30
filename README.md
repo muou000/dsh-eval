@@ -37,7 +37,7 @@ dsh-eval run .\evals\manifest.json --output .\evals\reports\latest.json --requir
 
 一旦提供 `thresholds`，validator 会要求恰好选择 `test` split、至少 5 次重复、两侧 runtime/entry artifact，以及成功率、平均分增益、逐对/任务回归、均值/p95 延迟和 safety/privacy/stability 全部门槛；模型比较还必须预注册 token 与成本门槛。缺字段不是“跳过”，而是 manifest 无效。
 
-当前开发/验证矩阵为 Node.js `^22.19.0 || >=24.0.0`、pnpm `10.33.0`、Cordis `^4.0.1` 及 npm 已发布的 DSH session 契约 `^0.1.1-rc.2`。相邻 DSH 源码为 `0.1.2-alpha.1`，但该版本尚未发布到 npm，且其 built SDK 真实进程快照当前被上游生命周期错误阻断；因此不能宣称已验证该 alpha 的生产入口。
+当前开发/验证矩阵为 Node.js `^22.19.0 || >=24.0.0`、pnpm `10.33.0`、Cordis `^4.0.1` 及 npm 已发布的 DSH session 契约 `^0.1.1-rc.2`。在相邻 DSH `0.1.2-alpha.1` revision `cd5ef814...` 上，打包插件已分别通过源码 CLI 和构建后公开 SDK 的真实进程组合验证：两者都安装到独立命名 profile，并在本地 mock OpenAI-compatible 上游下完成一个 turn。该证据只覆盖安装、加载和入口兼容性，不等同于真实模型效果或生产晋级证明。
 
 当前包尚未发布到 npm。源码安装先运行 `pnpm install && pnpm pack`，再让目标 DSH bundle 固定生成的 `.tgz`，不要依赖浮动 Git HEAD。卸载时从 profile 移除 `dsh-eval`，确认没有运行中的 evaluator 后清理 `<DSH_HOME>/eval/v1/runs`；报告目录单独按保留策略处理。回滚就是重新固定上一个已验证 tarball，旧报告不得改写，详细步骤见 [运维说明](docs/OPERATIONS.md)。
 
@@ -130,4 +130,4 @@ dsh --profile headless --patch <baseline-or-candidate.cordis.yml> <task>
 - timeout/取消会回收已知进程树；Windows 上顶层进程正常退出后自行脱离的后代无法由 Node `spawn` 可靠收容。此类 runner 必须使用外部 Job Object/容器监督，报告会保留该 promotion blocker。
 - trusted script 是 evaluator-controlled Oracle，但当前在本机克隆 workspace 中执行，不是容器 verifier。
 - 当前仓库未运行真实模型评测、Unix 矩阵、容器隔离或 canary；这些状态不会被 keyless 报告替代。
-- 当前相邻 DSH checkout 的 built SDK real-process snapshot 存在上游启动失败，source workaround 虽能通过但不作为发布证据；详见验收账本。
+- 当前相邻 DSH 的源码 CLI 与 built SDK 真实进程组合验证使用本地 mock 上游，probe 仍是被测进程自报；它们只证明入口兼容性，详见验收账本及 `evals/reports/dsh-real-process-latest.json`。

@@ -1,0 +1,117 @@
+{
+  "schema": "dsh-eval-real-process-evidence",
+  "schemaVersion": 1,
+  "evidenceThrough": "2026-08-30T08:09:16.026Z",
+  "scope": "Keyless plugin installation and composition through real DSH processes with a local mock OpenAI-compatible upstream",
+  "environment": {
+    "platform": "win32-x64",
+    "os": "Microsoft Windows 10.0.26220",
+    "node": "v26.8.1",
+    "pnpm": "11.7.0",
+    "dshVersion": "0.1.2-alpha.1",
+    "dshRevision": "cd5ef8148158c3a752a658978873241fdf8e2bbc",
+    "dshSourceDirty": false
+  },
+  "package": {
+    "name": "dsh-eval",
+    "version": "0.1.0",
+    "sourceRevision": null,
+    "sourceRevisionNote": "The tarball predates the repository's first commit; package identity is bound by SHA-256, but an exact source revision was not recorded at package creation.",
+    "filename": "dsh-eval-0.1.0.tgz",
+    "bytes": 43206,
+    "sha256": "cf1919f712f56312ba5314d4796bd29088121f7b65b47ebecf1350c5555dde74"
+  },
+  "runs": [
+    {
+      "id": "source-run",
+      "entrypoint": "source-cli",
+      "profile": "headless",
+      "profileBundles": [
+        "@deepseek-ai/dsh-base",
+        "@deepseek-ai/dsh-headless",
+        "dsh-eval"
+      ],
+      "installInvocation": "pnpm dsh plugin --profile headless add <dsh-eval-0.1.0.tgz>",
+      "exerciseInvocation": "pnpm dsh --profile headless <task>",
+      "exitCode": 0,
+      "observedResponse": "DSH_EVAL_SOURCE_OK",
+      "dumpedBundle": {
+        "id": "dsh-eval",
+        "name": "dsh-eval",
+        "config": {}
+      },
+      "probe": {
+        "schema": "dsh-eval-probe",
+        "schemaVersion": 1,
+        "trust": "self-reported",
+        "sessions": 1,
+        "turns": 1,
+        "completedTurns": 1,
+        "erroredTurns": 0,
+        "modelCalls": 1,
+        "toolCalls": 0,
+        "toolErrors": 0,
+        "inputTokens": 3,
+        "outputTokens": 18,
+        "totalTokens": 21
+      },
+      "status": "pass"
+    },
+    {
+      "id": "built-sdk-run",
+      "entrypoint": "built-sdk-public-api",
+      "profile": "sdk",
+      "profileBundles": [
+        "@deepseek-ai/dsh-base",
+        "@deepseek-ai/dsh-sdk-app",
+        "dsh-eval"
+      ],
+      "installInvocation": "node apps/cli/lib/bin.js plugin --profile sdk add <dsh-eval-0.1.0.tgz>",
+      "exerciseInvocation": "DeepSeekHarness.run() from @deepseek-ai/dsh-sdk-client",
+      "exitCode": 0,
+      "observedResponse": "DSH_EVAL_BUILT_SDK_OK",
+      "observedSessionEvents": 20,
+      "selectedEventCounts": {
+        "turn/start": 1,
+        "step/start": 1,
+        "assistant/message": 1,
+        "assistant/chunk": 7,
+        "step/end": 1,
+        "turn/end": 1
+      },
+      "dumpedBundle": {
+        "id": "dsh-eval",
+        "name": "dsh-eval",
+        "config": {}
+      },
+      "probe": {
+        "schema": "dsh-eval-probe",
+        "schemaVersion": 1,
+        "trust": "self-reported",
+        "sessions": 1,
+        "turns": 1,
+        "completedTurns": 1,
+        "erroredTurns": 0,
+        "modelCalls": 1,
+        "toolCalls": 0,
+        "toolErrors": 0,
+        "inputTokens": 3,
+        "outputTokens": 21,
+        "totalTokens": 24
+      },
+      "status": "pass"
+    }
+  ],
+  "overallStatus": "pass",
+  "claimsSupported": [
+    "The packed plugin can be installed into named source CLI and built SDK profiles.",
+    "Both real DSH process entrypoints compose the dsh-eval bundle and complete one keyless turn.",
+    "The previously observed inactive Cordis context startup error did not reproduce at the recorded DSH revision."
+  ],
+  "claimsNotSupported": [
+    "Real provider or real model behavior",
+    "Provider billing accuracy or independent token accounting",
+    "Production promotion eligibility",
+    "Unix, container, VM, canary or hostile-candidate isolation"
+  ]
+}
