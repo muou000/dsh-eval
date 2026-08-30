@@ -4,6 +4,8 @@
 
 当前版本是 development candidate。仓库内 keyless 校准套件故意比较一个已知错误实现和一个已知正确实现；它能证明评测器检测到预期差异，不能证明任何真实 DSH 插件或模型已经提升。真实模型与生产晋级仍需单独运行。
 
+当前兼容目标为 DSH `0.1.1-rc.2` 与 `0.1.2-alpha.1` 的公开 session 事件契约。可用 `pnpm run eval:current-dsh -- --dsh-root <clean-checkout>` 对相邻的干净 DSH 构建执行服务、probe 与卸载冒烟；该结果仍只是自报遥测兼容性证据。
+
 ## 能力边界
 
 - 版本化 `manifest`、case、report 和 probe 契约，未知字段失败关闭。
