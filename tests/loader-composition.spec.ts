@@ -32,7 +32,7 @@ describe('real Loader composition', () => {
       insert?: Array<{ id?: string; name?: string; config?: Record<string, unknown> }>
     }>
     const row = patch.flatMap(operation => operation.insert ?? []).find(entry => entry.id === 'dsh-eval')
-    expect(row).toMatchObject({ id: 'dsh-eval', name: 'dsh-eval' })
+    expect(row).toMatchObject({ id: 'dsh-eval', name: '@muou000/dsh-eval' })
     await writeFile(configPath, [
       "- name: '@deepseek-ai/dsh-llm'",
       "- name: '@deepseek-ai/dsh-session'",
@@ -50,7 +50,7 @@ describe('real Loader composition', () => {
     const modules = new Map<string, unknown>([
       ['@deepseek-ai/dsh-llm', LlmRuntime],
       ['@deepseek-ai/dsh-session', SessionStore],
-      ['dsh-eval', evaluation],
+      ['@muou000/dsh-eval', evaluation],
     ])
     context.loader.internal = {
       version: 'v2',
@@ -66,7 +66,7 @@ describe('real Loader composition', () => {
 
     expect((await context.evals.run(manifest)).decision).toBe('pass')
     const previous = context.evals
-    const entry = [...context.loader.entries()].find(item => item.options.name === 'dsh-eval')
+    const entry = [...context.loader.entries()].find(item => item.options.name === '@muou000/dsh-eval')
     expect(entry).toBeDefined()
     await context.loader.update(entry!.id, { disabled: true })
     await context.loader.await()

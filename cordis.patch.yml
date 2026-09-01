@@ -1,4 +1,4 @@
 - insert:
     - id: dsh-eval
-      name: dsh-eval
+      name: '@muou000/dsh-eval'
       config: {}

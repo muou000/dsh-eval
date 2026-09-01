@@ -1,7 +1,15 @@
 {
-  "name": "dsh-eval",
+  "name": "@muou000/dsh-eval",
   "version": "0.1.0",
   "description": "Evidence-first paired evaluation and release gates for DeepSeek Harness",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muou000/dsh-eval.git"
+  },
+  "homepage": "https://github.com/muou000/dsh-eval#readme",
+  "bugs": {
+    "url": "https://github.com/muou000/dsh-eval/issues"
+  },
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -44,6 +52,9 @@
     "node": "^22.19.0 || >=24.0.0"
   },
   "packageManager": "pnpm@10.33.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",

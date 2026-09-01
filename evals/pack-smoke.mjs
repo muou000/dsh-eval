@@ -32,7 +32,7 @@ try {
     private: true,
     type: 'module',
     dependencies: {
-      'dsh-eval': `file:${tarball.replaceAll('\\', '/')}`,
+      '@muou000/dsh-eval': `file:${tarball.replaceAll('\\', '/')}`,
       '@deepseek-ai/cordis': '4.0.1',
       '@deepseek-ai/dsh-session': '0.1.1-rc.2',
     },
@@ -41,7 +41,7 @@ try {
   checks.cleanInstallFromTarball = true
 
   const publicProbe = run(process.execPath, ['--input-type=module', '-e', [
-    "const api = await import('dsh-eval')",
+    "const api = await import('@muou000/dsh-eval')",
     "if (api.name !== 'dsh-eval' || typeof api.apply !== 'function' || typeof api.Evaluator !== 'function') process.exit(1)",
     "if (typeof api.loadManifest !== 'function' || typeof api.runProcess !== 'function') process.exit(1)",
   ].join(';')], consumer)
@@ -52,13 +52,14 @@ try {
   checks.cliHelp = helpProbe.status === 0 && helpProbe.stdout.includes('dsh-eval validate')
   if (!checks.cliHelp) throw new Error(`CLI help probe failed: ${helpProbe.stderr.trim()}`)
 
-  const example = join(consumer, 'node_modules', 'dsh-eval', 'examples', 'manifest.json')
+  const packageRoot = join(consumer, 'node_modules', '@muou000', 'dsh-eval')
+  const example = join(packageRoot, 'examples', 'manifest.json')
   const validationProbe = runPnpm(['exec', 'dsh-eval', 'validate', example], consumer, false)
   checks.packagedExample = validationProbe.status === 0 && validationProbe.stdout.includes('keyless-smoke')
   if (!checks.packagedExample) throw new Error(`packaged example validation failed: ${validationProbe.stderr.trim()}`)
 
-  const patch = await readFile(join(consumer, 'node_modules', 'dsh-eval', 'cordis.patch.yml'), 'utf8')
-  checks.bundlePatch = patch.includes('id: dsh-eval') && patch.includes('name: dsh-eval')
+  const patch = await readFile(join(packageRoot, 'cordis.patch.yml'), 'utf8')
+  checks.bundlePatch = patch.includes('id: dsh-eval') && patch.includes("name: '@muou000/dsh-eval'")
   if (!checks.bundlePatch) throw new Error('packaged Cordis patch does not insert dsh-eval')
 
   const exampleReport = join(consumer, 'keyless-report.json')

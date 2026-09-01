@@ -29,11 +29,17 @@
 
 ## 安装
 
+npm 发布名为 `@muou000/dsh-eval`，可直接从 registry 安装：
+
+```powershell
+dsh plugin --profile web add '@muou000/dsh-eval@latest'
+```
+
 ```powershell
 corepack pnpm install --frozen-lockfile
 corepack pnpm run check
 corepack pnpm pack
-$tarball = (Resolve-Path .\dsh-eval-0.1.0.tgz).Path
+$tarball = (Resolve-Path .\muou000-dsh-eval-0.1.0.tgz).Path
 dsh plugin --profile web add $tarball
 dsh --profile web --dump-config
 ```
@@ -198,7 +204,7 @@ JSON 报告是规范证据，Markdown 是生成的阅读视图。备份报告时
 停止所有 evaluator 后移除插件：
 
 ```powershell
-dsh plugin --profile web remove dsh-eval
+dsh plugin --profile web remove '@muou000/dsh-eval'
 dsh --profile web --dump-config
 ```
 
