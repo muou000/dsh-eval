@@ -14,7 +14,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "bin": {
-    "dsh-eval": "./lib/cli.js"
+    "dsh-eval": "lib/cli.js"
   },
   "exports": {
     ".": {
